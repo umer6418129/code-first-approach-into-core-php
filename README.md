@@ -7,7 +7,6 @@ This repository contains examples and best practices for using a code-first appr
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Contributing](#contributing)
-4. [License](#license)
 
 ## Installation
 To install and run this project, you need to have PHP and MySQL installed on your machine.
@@ -28,7 +27,7 @@ $config = [
 ];
 ```
 
-##Usage
+## Usage
 To connect to the database, you need to call the `connectToDatabase` function from the `connection.php` file. Here's how the `connection.php` file looks:
 ```php
 <?php
@@ -110,6 +109,6 @@ http://localhost/your_project_directory/database/migrations/Migrate.php
 
 if your table will not be exist that will be created
 
-#contributing
+## Contributing
 Currently, this project only supports creating tables. I am working on developing a full-fledged migration system for Core PHP. If you have any ideas or improvements, feel free to make a pull request.
 

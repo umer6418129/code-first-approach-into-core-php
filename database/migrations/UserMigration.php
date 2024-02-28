@@ -22,12 +22,25 @@ class UserMigration extends BaseMigration
                     FOREIGN KEY (role_id) REFERENCES tbl_userroles(id)
                 )";
                 self::createTable($conn, $sql);
-            }else{
-                echo "tbl_user already exist";
             }
         } catch (\Throwable $th) {
             echo $th;
         }
     }
+
+    public static function down($conn)
+    {
+        try {
+            $sql = "SHOW TABLES LIKE 'tbl_user'";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                $sql = "DROP TABLE tbl_user";
+                self::createTable($conn, $sql);
+            }
+        } catch (\Throwable $th) {
+            echo $th;
+        }
+    }
+
 }
 

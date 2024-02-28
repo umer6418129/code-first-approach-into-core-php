@@ -14,8 +14,20 @@ class RoleMigration extends BaseMigration
         )";
             self::createTable($conn, $sql);
             echo "tbl_userRoles has created";
-        }else{
-            echo "tbl_userRoles already exist";
+        }
+    }
+
+    public static function down($conn)
+    {
+        try {
+            $sql = "SHOW TABLES LIKE 'tbl_userRoles'";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                $sql = "DROP TABLE tbl_userRoles";
+                self::createTable($conn, $sql);
+            }
+        } catch (\Throwable $th) {
+            echo $th;
         }
     }
 }

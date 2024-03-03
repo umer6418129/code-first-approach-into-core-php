@@ -109,6 +109,7 @@ http://localhost/your_project_directory/database/migrations/Migrate.php
 
 if your table will not be exist that will be created
 
+for further guidance just visit my article https://getsmartsolution.com/code-first-approach-into-core-php/
 ## Contributing
 Currently, this project only supports creating tables. I am working on developing a full-fledged migration system for Core PHP. If you have any ideas or improvements, feel free to make a pull request.
 
